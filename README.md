@@ -1,5 +1,7 @@
 # Golang Review, 09-15-2021: Concurrency Part 3
 
+Note: The updated topic list for Learn&Kount/DevOps is in `./Learn_and_Kount_Devops_TopicList.md`
+
 ## Exercise 1: Review the channel-operations table
 
 ### blank (for practicing)
