@@ -82,7 +82,7 @@
 
   We attempt to    `read` from it
 
-  We get:    block / hang <-- risk of goroutine leak
+  We get:    block / hang <-- (could be risk of goroutine leak if this happens in a goroutine)
 
 * Channel is    `open` + `empty-and-reader-is-active / not full`
 
@@ -106,7 +106,7 @@
 
   We attempt to    `write` to it
 
-  We get:    block / hang <-- risk of goroutine leak
+  We get:    block / hang <-- (could be risk of goroutine leak if this happens in a goroutine)
 
 * Channel is    `open` + `not empty / full`
 
@@ -124,13 +124,13 @@
 
   We attempt to    `write` to it
 
-  We get:    **PANIC!!** <-- container terminates, restarts; requrest gets a 500
+  We get:    **PANIC!!** <-- container terminates, restarts; request gets a 500
 
 * Channel is    `closed`
 
   We attempt to    `close` it
 
-  We get:    **PANIC!!** <-- container terminates, restarts; requrest gets a 500
+  We get:    **PANIC!!** <-- container terminates, restarts; request gets a 500
 
 * Channel is    `nil`
 
@@ -148,7 +148,7 @@
 
   We attempt to    `close` it
 
-  We get:    **PANIC!!** <-- container terminates, restarts; requrest gets a 500
+  We get:    **PANIC!!** <-- container terminates, restarts; request gets a 500
 
 ## Exercise 2: Separating generator/consumer concerns; Practicing clear channel ownership; Avoiding mutability issues; Identifyig Goroutine leaks
 
